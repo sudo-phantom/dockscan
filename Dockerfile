@@ -4,7 +4,7 @@ RUN mkdir /data
 WORKDIR /data
 COPY scope.txt .
 
-VOLUME /data
+
 RUN nmap -iL ./scope.txt -sV --open --top-ports 50 -v -v -oN tcp.txt  -oX tcp-scan.xml -Pn -n;
 RUN nmap -iL ./scope.txt -sU --open --top-ports 50  -v -v -oN full_UDP.txt -oX udp-scan.xml -Pn -n;
 
