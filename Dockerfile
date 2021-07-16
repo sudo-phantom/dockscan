@@ -10,7 +10,8 @@ RUN nmap -iL ./scope.txt -sU --open --top-ports 50  -v -v -oN full_UDP.txt -oX u
 
 VOLUME /data
 
-
+RUN pip3 install -r ./requirements.txt
+RUN python3 converter.py
 #RUN nmap -iL ./scope.txt -sV  -n -vv -oN ACK.txt --script-trace;
 #RUN nmap -iL ./scope.txt -sF  -g 53 -vv -oN spoof_dns.txt --script-trace;
 #ENTRYPOINT nmap -sC -sV --top-ports 100 -iL scope.txt -oN results.txt
