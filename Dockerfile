@@ -1,5 +1,5 @@
 FROM kalilinux/kali-rolling
-RUN apt-get update && apt-get upgrade -y && apt-get -y install nmap && apt-get -y install python3
+RUN apt-get update && apt-get upgrade -y && apt-get -y install nmap && apt-get -y install python3 python3-pip
 RUN mkdir /data
 WORKDIR /data
 COPY scope.txt .
