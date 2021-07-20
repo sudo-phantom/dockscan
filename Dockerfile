@@ -11,7 +11,7 @@ RUN nmap -iL ./scope.txt -sU --open --top-ports 50  -v -v -oN full_UDP.txt -oX u
 
 # Run vunlers nmap
 RUN git clone https://github.com/vulnersCom/nmap-vulners.git
-COPY nmap-vulners/vulners.nse /usr/share/nmap/scripts/
+RUN cp nmap-vulners/vulners.nse /usr/share/nmap/scripts/
 RUN nmap -sV --open --script vulners --script-args mincvss=5.0 -iL ./scope.txt -v -v -oX vulners-open.xml -oG vulners-tcp.txt -Pn -n;
 VOLUME /data
 
