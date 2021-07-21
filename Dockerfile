@@ -16,4 +16,4 @@ RUN nmap -iL ./scope.txt -sU --open --top-ports 20 -T 3 -v -v -oN full_UDP.txt -
 VOLUME /data
 
 RUN pip3 install -r ./requirements.txt
-
+RUN python3 parse.py
