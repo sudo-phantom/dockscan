@@ -3,7 +3,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get -y install nmap && apt-get -
 RUN mkdir /data
 WORKDIR /data
 COPY scope.txt .
-COPY convert.py .
+COPY parse.py .
 COPY requirements.txt .
 #scan for open tcp and udp
 RUN nmap -iL ./scope.txt -sV --open --top-ports 20 -T 3 -v -v -oN tcp.txt  -oX tcp-scan.xml -Pn -n;
